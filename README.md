@@ -26,56 +26,58 @@ Each cell can have up to eight neighbors: above, below, left, right, and the fou
 - Pause and resume the simulation
 - Live and dead cells are displayed with different background colors
 
-## Initial Setup
-
-This project uses a basic Express server to serve the Conway's Game of Life application locally.
-
-You will need:
-
-- Node.js
-- npm
-
-#### Install Dependencies
-
-From the project directory, initialize the project and install Express:
-
 ## Running the Program Locally
 
 1. Clone the repository:
 
-```bash
-git clone <repository-url>
-```
+   ```bash
+   git clone <repository-url>
+   ```
 
 2. Then navigate into the project directory:
 
-```bash
-cd <project-folder>
-```
+   ```bash
+   cd <project-folder>
+   ```
 
-Note: If you downloaded the project as a ZIP file, extract it and open a terminal inside the extracted project folder.
+   Note: If you downloaded the project as a ZIP file, extract it and open a terminal inside the extracted project folder.
 
 3. Install the required dependencies by running:
 
-```bash
-npm install express
-```
+   ```bash
+   npm install
+   ```
 
 4. Start the server on your local machine
 
-```bash
-node server.js
-```
+   ```bash
+   node server.js
+   ```
 
 5. Run the application in your browser
    Open a web browser and navigate to: http://localhost:3000
    The Conway's Game of Life should now be running locally.
 
+## Controls
+
+- **Step**: advances the simulation by one generation
+
+- **Reset**: stops the simulation if it is running and restores the board to the original 25 × 25 checkerboard pattern
+
+- **Go**: starts the simulation and automatically advances the board every 100 milliseconds
+
+- **Pause**: stops the automatic simulation while preserving the current board state
+
+- **Random**: stops the simulation if it is running and generates a new random board. Each cell has an equal probability of being either alive or dead
+
+Clicking **Go** after **Pause** resumes the simulation from where it stopped.
+
 ## Tech Stack
 
-- HTML/CSS: web-based interface for Conway's Game of Life
-- JavaScript: game logic, state management, event handling, DOM manipulation
-- Data structure: Nested loops check cell neighbors,
+- **HTML/CSS**: web-based interface for Conway's Game of Life
+- **JavaScript**: game logic, state management, event handling, DOM manipulation
+- **Node.js/Express**: Basic server setup to run the application locally
+- **Data structure**: Nested loops check cell neighbors,
 
   2D array of booleans used to store state -
 

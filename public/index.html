@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="js/conway.js"></script>
+  <script src="js/simulation.js"></script>
+</head>
+
+<body>
+  <center><h1>Conway's Game of Life</h1></center>
+
+  <center><table id="table"> </table></center>
+
+  <div id="button-container">
+
+    <button id="step"> Step </button>
+    <button id="go"> Go</button>
+    <button id="pause"> Pause</button>
+    <button id="reset"> Reset </button>
+    <button id="random"> Random </button>
+
+  </div>
+
+  <script src="conway.js"></script>
+  <script src="simulation.js"></script>
+
+  <script>
+
+    let board =[];
+    let cells =[];
+
+    function initializeBoard() {
+      for (let i = 0; i < 25; i++) {
+        board[i] = [];
+
+        for (let j = 0; j < 25; j++) {
+          board[i][j] = (i + j) % 2 === 0;
+          
+        }
+      }
+    }
+
+    function createTable() {
+      let table = document.getElementById("table");
+
+      for (let i = 0; i < 25; i++) {
+        let row = document.createElement("tr");
+        cells[i] = [];
+
+        for (let j = 0; j < 25; j++) {
+          let cell = document.createElement("td");
+          cells[i][j] = cell; 
+
+          row.append(cell);
+        }
+        table.append(row);
+      }
+      return table;
+    
+    }
+
+    function createBoard() {
+      for (let i = 0; i < 25; i++) {
+        for (let j = 0; j < 25; j++) {
+          if (board[i][j]) {
+            cells[i][j].style.background = "grey"; 
+          } else {
+            cells[i][j].style.background = "white"; 
+          }
+        }
+      }
+    } 
+
+     function randomBoard() {
+
+      for (let i = 0; i < 25; i++) {
+        for (let j = 0; j < 25; j++) {
+          board[i][j] = Math.random() < 0.5;
+        }}
+        }
+
+
+        //buttons to play: step, reset, random, go and pause
+        document.getElementById("step").addEventListener("click", function () {
+
+            board = stepBoard(board);
+            createBoard();
+          });
+        
+        document.getElementById("reset").addEventListener("click", function () {
+          
+          stopSimulation();
+          initializeBoard();
+          createBoard();
+
+          }); 
+
+        document.getElementById("random").addEventListener("click", function () {
+
+          randomBoard();
+          createBoard();
+          });
+
+        document.getElementById("go").addEventListener("click", function () {
+
+          startSimulation();
+          }); 
+          
+        document.getElementById("pause").addEventListener("click", function () {
+
+          stopSimulation();  
+          });
+
+
+    initializeBoard();
+    createTable();
+    createBoard();
+
+
+
+  </script>
+
+</body>
+
+</html>

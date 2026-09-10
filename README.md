@@ -2,6 +2,8 @@
 
 A browser-based implementation of Conway's Game of Life built with plain JavaScript and the standard DOM API.
 
+View here: https://conway-game-of-life-j0l8.onrender.com/
+
 ## Overview
 
 Conway's Game of Life is a cellular automaton created by mathematician John Horton Conway. The simulation takes place on a grid of cells, where each cell is either alive or dead.

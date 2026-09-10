@@ -8,6 +8,9 @@ View here: https://conway-game-of-life-j0l8.onrender.com/
 
 Conway's Game of Life is a cellular automaton created by mathematician John Horton Conway. The simulation takes place on a grid of cells, where each cell is either alive or dead.
 
+<img width="1032" height="876" alt="Screenshot 2026-09-09 at 9 35 31 PM" src="https://github.com/user-attachments/assets/04df6482-8223-4c5b-8c4d-bbf897d21930" />
+
+
 Each generation is calculated using the following rules:
 
 - A live cell with exactly 2 or 3 live neighbors survives.
@@ -71,6 +74,9 @@ Each cell can have up to eight neighbors: above, below, left, right, and the fou
 - **Pause**: stops the automatic simulation while preserving the current board state
 
 - **Random**: stops the simulation if it is running and generates a new random board. Each cell has an equal probability of being either alive or dead
+
+  <img width="867" height="879" alt="Screenshot 2026-09-09 at 9 36 13 PM" src="https://github.com/user-attachments/assets/c9d21087-e092-45bb-904d-83f2b573567b" />
+
 
 Clicking **Go** after **Pause** resumes the simulation from where it stopped.
 
